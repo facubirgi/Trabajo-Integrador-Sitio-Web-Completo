@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <!-- Logo y nombre -->
+    <a class="navbar-brand fw-bold" href="home.html">
+      <i class="fas fa-home me-2"></i> Inicio
+    </a>
+    
+    <!-- Botón para móviles -->
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarContent" 
+      aria-controls="navbarContent" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation"
+    >
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="calcular.html">
+            <i class="fas me-1"></i> Calcular
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="nosotros.html">
+            <i class="fas me-1"></i> Nosotros
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="noticias.html">
+            <i class="fas me-1"></i> Noticias
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacto.html">
+            <i class="fas me-1"></i> Contacto
+          </a>
+        </li>        
+        <li class="nav-item">
+          <a class="nav-link text-danger" href="login.html" id="logoutBtn">
+            <i class="fas fa-sign-out-alt me-1"></i> Cerrar sesión
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main  class="container my-4">
+    <div class="container my-5">
+        <h2 class="text-center mb-4"><i class="fas fa-newspaper me-2"></i>Noticias Financieras</h2>
+            <div class="row g-4" id="newsContainer">
+                <!-- Las noticias se cargarán aquí via JS -->
+                <div class="text-center py-4">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                </div>
+                <p class="mt-2">Buscando noticias actualizadas...</p>
+                </div>
+            </div>
+    </div>
+</main>
+<footer class="footer py-3 bg-primary text-white mt-auto">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5><i class="fas fa-exchange-alt me-2"></i>Divisas App</h5>
+        <p class="small">Herramienta educativa para conversión de monedas y análisis financiero.</p>
+      </div>
+      <div class="col-md-3">
+        <h5>Enlaces</h5>
+        <ul class="list-unstyled">
+          <li>
+              <a href="https://www.linkedin.com/in/facundo-birgi/" target="_blank" class="text-white" style="text-decoration: none;">
+                <i class="fab fa-linkedin me-1" style="color: #ffffff;"></i> LinkedIn
+              </a>
+          </li>
+          <li>
+              <a href="https://www.instagram.com/facuubirgi/" target="_blank" class="text-white me-3" style="text-decoration: none;">
+                <i class="fab fa-instagram me-1" style="color: #ffffff;"></i> Instagram
+              </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Contacto</h5>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-envelope me-2"></i> birgifacundo@gmail.com</li>
+          <li><i class="fas fa-map-marker-alt me-2"></i> Rafaela, Argentina</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="my-2 bg-light">
+    <div class="text-center small">
+      © 2025 Divisas App - <a href="#" class="text-white">Términos y condiciones</a>
+    </div>
+  </div>
+</footer>
+  <script src="js/new.js"></script>
+</body>
+</html>

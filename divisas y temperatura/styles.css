@@ -1,0 +1,46 @@
+/* Estructura básica para el sticky footer */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Esto hace que el contenido principal ocupe el espacio restante */
+}
+
+.footer {
+  margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  display: none;
+}
+.was-validated .form-control:invalid {
+  border-color: #dc3545;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #007bff, #00b4ff);
+  color: white;
+}
+    .card-hover:hover {
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .news-card {
+      border-left: 4px solid #007bff;
+    }
+    .news-card {
+      transition: transform 0.3s ease;
+    }
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }

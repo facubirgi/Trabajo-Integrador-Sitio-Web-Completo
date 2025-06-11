@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DivisasApp - Calcular</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <!-- Logo y nombre -->
+    <a class="navbar-brand fw-bold" href="home.html">
+      <i class="fas fa-home me-2"></i> Inicio
+    </a>
+    
+    <!-- Botón para móviles -->
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarContent" 
+      aria-controls="navbarContent" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation"
+    >
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="calcular.html">
+            <i class="fas me-1"></i> Calcular
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="nosotros.html">
+            <i class="fas me-1"></i> Nosotros
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="noticias.html">
+            <i class="fas me-1"></i> Noticias
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacto.html">
+            <i class="fas me-1"></i> Contacto
+          </a>
+        </li>        
+        <li class="nav-item">
+          <a class="nav-link text-danger" href="login.html" id="logoutBtn">
+            <i class="fas fa-sign-out-alt me-1"></i> Cerrar sesión
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main  class="container my-4">
+    <div class="container my-5">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+              <div class="card h-100 shadow-sm">
+              <div class="card-header bg-primary text-white">
+                  <i class="fas fa-dollar-sign me-2"></i> Valor del Dólar Hoy
+              </div>
+              <div class="card-body">
+                  <div id="dolarValue" class="text-center py-4">
+                  <div class="spinner-border text-primary" role="status">
+                      <span class="visually-hidden">Cargando...</span>
+                  </div>
+                  <p class="mt-2">Obteniendo tasa de cambio...</p>
+                  </div>
+                  <p class="text-muted small">* Actualizado en tiempo real via <a href="https://www.exchangerate-api.com/" target="_blank">ExchangeRate-API</a>.</p>
+              </div>
+              </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+              <div class="card h-100 shadow-sm">
+              <div class="card-header bg-success text-white">
+                  <i class="fas fa-calculator me-2"></i> Calculadora
+              </div>
+              <div class="card-body">
+                  <form id="conversionForm">
+                  <div class="mb-3">
+                      <label for="amount" class="form-label">Monto en Moneda Local</label>
+                      <input type="number" class="form-control" id="amount" step="0.01" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="currency" class="form-label">Moneda</label>
+                      <select class="form-select" id="currency" required>
+                      <option value="COP">Peso Colombiano (COP)</option>
+                      <option value="MXN">Peso Mexicano (MXN)</option>
+                      <option value="ARS">Peso Argentino (ARS)</option>
+                      </select>
+                  </div>
+                  <button type="submit" class="btn btn-success w-100">
+                      <i class="fas fa-exchange-alt me-1"></i> Convertir a USD
+                  </button>
+                  </form>
+                  <div id="result" class="mt-4 p-3 bg-light rounded text-center" style="display: none;">
+                  <h4>Resultado</h4>
+                  <p id="conversionResult" class="fs-3 fw-bold text-success"></p>
+                  </div>
+              </div>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+              <div class="col-md-6">
+                <h3 class="border-bottom pb-2"><i class="fas fa-user-tie me-2"></i>Información sobre el Dolar</h3>
+                <p>
+                  El dólar estadounidense (USD) es la moneda más utilizada en transacciones internacionales y es considerado el estándar global para reservas de divisas. Su valor puede fluctuar debido a factores económicos, políticos y sociales. En Divisas App, te proporcionamos la tasa de cambio actualizada para que puedas realizar conversiones precisas y al instante.
+                </p>
+                </div>
+                <div class="col-md-6">
+                <h3 class="border-bottom pb-2"><i class="fas fa-user-tie me-2"></i>Información sobre el Peso Argentino</h3>
+                <p>El Peso Argentino es una moneda medianamente nueva, es prodecesora del austral argentino, utilizado hasta mediado de los 90's, su valor fue variando con el paso del tiempo por diferentes crisis que hubo</p>
+              </div>
+        </div>
+            <div class="container my-5">
+      <h2 class="text-center mb-4"><i class="fas fa-star me-2"></i>Conceptos Clave</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <h4 class="card-title text-primary"><i class="fas fa-chart-line me-2"></i>Forex Trading</h4>
+              <p class="card-text">El mercado de divisas es el más líquido del mundo, con un volumen diario de $6.6 billones.</p>
+              <a href="#" class="btn btn-outline-primary">Leer más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <h4 class="card-title text-success"><i class="fas fa-percentage me-2"></i>Tipos de Cambio</h4>
+              <p class="card-text">Factores como inflación, tasas de interés y estabilidad política afectan las divisas.</p>
+              <a href="#" class="btn btn-outline-success">Leer más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <h4 class="card-title text-warning"><i class="fas fa-shield-alt me-2"></i>Riesgos</h4>
+              <p class="card-text">La volatilidad puede generar ganancias o pérdidas significativas en minutos.</p>
+              <a href="#" class="btn btn-outline-warning">Leer más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="bg-light py-5 mt-4">
+        <div class="container text-center">
+          <h2><i class="fas fa-tools me-2"></i>¿Qué deseas hacer?</h2>
+          <p class="lead mb-4">Utiliza nuestras herramientas financieras</p>
+          <div class="row g-4 justify-content-center">
+            <div class="col-lg-3 col-md-6">
+              <a href="calcular.html" class="card card-hover text-decoration-none">
+                <div class="card-body">
+                  <i class="fas fa-calculator fa-3x text-success mb-3"></i>
+                  <h5>Calculadora</h5>
+                  <p class="text-muted">Convierte divisas al instante</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <a href="#" class="card card-hover text-decoration-none">
+                <div class="card-body">
+                  <i class="fas fa-chart-pie fa-3x text-primary mb-3"></i>
+                  <h5>Gráficos</h5>
+                  <p class="text-muted">Evolución histórica del dólar</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <a href="#" class="card card-hover text-decoration-none">
+                <div class="card-body">
+                  <i class="fas fa-bell fa-3x text-warning mb-3"></i>
+                  <h5>Alertas</h5>
+                  <p class="text-muted">Configura notificaciones de tasas</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+<footer class="footer py-3 bg-primary text-white mt-auto">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5><i class="fas fa-exchange-alt me-2"></i>Divisas App</h5>
+        <p class="small">Herramienta educativa para conversión de monedas y análisis financiero.</p>
+      </div>
+      <div class="col-md-3">
+        <h5>Enlaces</h5>
+        <ul class="list-unstyled">
+          <li>
+              <a href="https://www.linkedin.com/in/facundo-birgi/" target="_blank" class="text-white"style="text-decoration: none;">
+                <i class="fab fa-linkedin me-1" style="color: #ffffff;"></i> LinkedIn
+              </a>
+          </li>
+          <li>
+              <a href="https://www.instagram.com/facuubirgi/" target="_blank" class="text-white me-3"style="text-decoration: none;">
+                <i class="fab fa-instagram me-1" style="color: #ffffff;"></i> Instagram
+              </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Contacto</h5>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-envelope me-2"></i> birgifacundo@gmail.com</li>
+          <li><i class="fas fa-map-marker-alt me-2"></i> Rafaela, Argentina</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="my-2 bg-light">
+    <div class="text-center small">
+      © 2025 Divisas App - <a href="#" class="text-white">Términos y condiciones</a>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
